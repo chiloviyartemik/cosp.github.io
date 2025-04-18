@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    font-family:'Pt Sans'; /* шрифты */
+    padding: 0px;
+    margin: 0px;
+}
+
+.pt-sans-regular { /* шрифты */
+    font-family: "PT Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-image: url(images/Galaxy1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-areas: "header header header"
+                        ". main ."
+                        ".footer .";
+}
+
+
+header{ /* оформление шапки сайта лого и ссылокы */
+    display: grid;
+    grid-area: header;
+    height: 120px;
+    width: 1920px;
+    background-color: #171715; 
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(/images/paluba.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{ /* лого */
+    height: auto;   
+    border-radius: 30px; 
+    margin-left: 30px;
+}
+
+nav{    /* ссылки */
+    list-style: none;
+    text-decoration: none;
+}
+
+ul{
+    display: grid;
+    list-style: none;
+    text-decoration: none;
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-column-gap: 290px;
+    margin: 40px 60px 10px 300px;
+}
+
+a{  
+    list-style: none;
+    text-decoration: none;
+    font-size: 35px;
+    color: #5b94ff;
+}
+
+a:hover{
+    text-shadow: 0px 0px 0px  #A1D3EF;    
+    border: #A1D3EF;
+}
+
+main{   
+    width: auto;
+    margin-top: 90px;
+    background-color:#171715;
+    grid-area: main;
+    border-radius: 10px;
+}
+
+.img_top1{  /* img  страница 1*/
+    margin: 50px 10px 10px 10px;
+    width: 580px;
+    height: 360px;
+}
+
+.h{  
+    margin-top: 50px;
+    text-align: center;
+    list-style: none;
+    text-decoration: none;
+    font-size: 50px;
+    color:#5b94ff;
+}
+
+.h:hover{
+    text-shadow: 0px 0px 0px  #A1D3EF;    
+    border: #A1D3EF;  
+}
+
+footer{ 
+    display: grid;
+    grid-area: footer;
+    height: auto;
+    background-color: #171715;
+    border-radius: 10px;
+}
+
+.footer_h{ 
+    margin-top: 20px;
+    margin-bottom: 25px;  
+    text-align: center;
+    list-style: none;
+    text-decoration: none;
+    font-size: 40px;
+    color:#5b94ff;  
+}
+
+.top_lego{  /*майн 1 2 стр*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_3{ /*img стр 3*/
+    object-fit: contain;
+}
+
+
+
+@media (min-width: 1000px) {    /*ноутбук пк*/
+    .burger{
+        display: none;
+    }
+    .img_2{ /*img стр 3*/
+    margin-top: 40px;
+    min-width: 1300px;
+    }
+}
+
+@media (min-width: 648px) and (max-width: 1000px) {     /* телефоны горизонтально */
+    div{  
+        display: flex;
+        margin: 0px;
+        width: auto;
+        height: auto;
+        justify-content: start;
+    }
+    .img_2 {
+        margin-top: 40px;
+        max-width: 600px;
+    }
+    .burger{
+        display: block;
+        width: 70px;
+        height: 70px;
+        background-image: url("images/burger.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: calc(100% - 1600px);
+        top: calc(10% + 35px);
+    }
+    header nav{
+        position: absolute;
+        top: 121px;
+        background-color: #000;
+        width: 40%;
+        transform: translate(0px,3000px);
+        transition: 1s;
+        margin: 0;
+    }
+    header > nav > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        height: 50vh;
+        margin: 0;
+    }
+
+    .burger.active{
+        background-image: url("images/krest.png");
+    }
+    nav.active{
+    transform: translate(0);
+    transition: 2s;    
+    }
+}
+
+@media (max-width: 649px) {     /* телефоны вертикально */
+    div{  
+        display: flex;
+        margin: 0px;
+        width: auto;
+        height: auto;
+        justify-content: start;
+    }
+    .img_2 {
+        margin-top: 40px;
+        max-width: 600px;
+    }
+    .burger{
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-image: url("images/burger.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: calc(100% - 1600px);
+        top: calc(10% + 35px);
+    }
+    header nav{
+        position: absolute;
+        top: 121px;
+        background-color: #000;
+        width: 34%;
+        transform: translate(0px,3000px);
+        transition: 1s;
+        margin: 0;
+    }
+    header > nav > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        height: 50vh;
+        margin: 0;
+    }
+
+    .burger.active{
+        background-image: url("images/krest.png");
+    }
+    nav.active{
+    transform: translate(0);
+    transition: 2s;    
+    }
+}
+
